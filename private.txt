@@ -1,0 +1,9 @@
+/id    (id를 텍스트로인식)
+/:id  (express가 id가 변하는 값이라는걸 인지함)
+babel -> ES6 문법을 ES5로 바꿔줌
+cookieParser = cookie를 전달받아 사용할수 있도록 만들어주는 미들웨어
+                사용자 인증 같은 곳에서 쿠키를 검사할때 사용
+bodyParser   = 사용자가 웹사이트로 전달하는 정보들을 검사하는 미들웨어
+                request 정보에서 폼이나 제이슨 형태로 된 바디검사
+helmet  = app이 더 안전하도록 만들어줌 
+morgan  = app에서 발생하는 모든일을 로깅해줌
