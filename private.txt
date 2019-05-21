@@ -11,3 +11,5 @@ morgan  = app에서 발생하는 모든일을 로깅해줌
 pug는 템플릿 언어 (express의 view engine) -> default folder (virews)
 
 pug텍스트사이에 자바스크립트추가 할경우 #{} 사용
+
+express가 query 를 집어 넣음  "&"로 계속 추가가능
