@@ -1,57 +1,17 @@
-
-
-//가짜 db --> 실제 데이터베이스 연동전에 해보면 좋음(습관)
-export const videos=[
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
+mongoose.connect(
+    process.env.MONGO_URL,
     {
-        id:324393,
-        title: "Video awesome",
-        description: "This is something I love",
-        views: 24,
-        videoFile: "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
-        creator:{
-            id:121212,
-            name:"Hyeok",
-            email:"hyeok@join.com",
-
-        }
-    },
-    {
-        id:1212121,
-        title: "Video super",
-        description: "This is something I love",
-        views: 24,
-        videoFile: "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
-        creator:{
-            id:121212,
-            name:"Hyeok",
-            email:"hyeok@join.com",
-
-        }
-    },
-    {
-        id:55555,
-        title: "Video nice",
-        description: "This is something I love",
-        views: 24,
-        videoFile: "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
-        creator:{
-            id:121212,
-            name:"Hyeok",
-            email:"hyeok@join.com",
-
-        }
-    },{
-        id:11111,
-        title: "Video perfect",
-        description: "This is something I love",
-        views: 24,
-        videoFile: "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
-        creator:{
-            id:121212,
-            name:"Hyeok",
-            email:"hyeok@join.com",
-
-        }
+        useNewUrlParser:true,   //
+        useFindAndModify:false  //신버전엔 돼있을거임
     }
+);
 
-];
+const db = mongoose.connection;
+
+const handleOpen =()=>console.log("▶Connected to DB");
+const handleError = (error)=> console.log(`(X) Error on DB Connection:${error}`);
+db.once("open",handleOpen);
+db.on("error",handleError);
