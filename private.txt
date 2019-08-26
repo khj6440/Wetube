@@ -17,3 +17,6 @@ express가 query 를 집어 넣음  "&"로 계속 추가가능
 코드를 복사-붙여넣기 하지 않고 재활용 하는 방법 = mixin
 
 bodyParser를 사용하지 않으면 user가 입력한 내용이 전달안됨
+
+async 나를 기다려주는 무언가 -> look for videos를 할경우 자바스크립트는 나를 기다려주지않고 
+                               video가 없는 페이지를 render함
